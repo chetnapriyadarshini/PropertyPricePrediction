@@ -21,34 +21,34 @@ For the same purpose, the company has collected a data set from the sale of hous
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 ## Conclusions
-- Conclusion 1 from the analysis
-- Conclusion 2 from the analysis
-- Conclusion 3 from the analysis
-- Conclusion 4 from the analysis
+- 12 variables influence the price most.
+- YearBuilt, 1stFloorSF(Square Footage of 1st Floor),2nd Floor Sqaure KitchenQual_TA(typical) are the most important predictors for price
+- KitchenQual_TA is negatively corelated with price while others are positively corelated
+- Crawford neighborhood fetches the best price
 
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
 
 
 ## Technologies Used
-- library - version 1.0
-- library - version 2.0
-- library - version 3.0
-
-<!-- As the libraries versions keep on changing, it is recommended to mention the version of library used in this project -->
-
-## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- References if any...
-- This project was based on [this tutorial](https://www.example.com).
+- argcomplete==3.1.1
+- certifi==2024.2.2
+- charset-normalizer==3.3.2
+- click==8.1.7
+- colorama==0.4.6
+- idna==3.7
+- jsonpickle==3.0.2
+- packaging==23.1
+- pipx==1.2.0
+- requests==2.31.0
+- tqdm==4.66.4
+- urllib3==2.2.1
+- userpath==1.9.0
+- pandas==2.0.3
+- numpy==1.24.3
+- matplotlib==3.7.2
+- python==3.11.5 
+- sklearn==1.3.0
 
 
 ## Contact
-Created by [@githubusername] - feel free to contact me!
-
-
-<!-- Optional -->
-<!-- ## License -->
-<!-- This project is open source and available under the [... License](). -->
-
-<!-- You don't have to include all sections - just the one's relevant to your project -->
+Created by [@chetnapriyadarshini] - feel free to contact me!
