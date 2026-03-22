@@ -1,54 +1,102 @@
-# Project Name
->  Property Pricing
+# Property Price Prediction
 
+A Jupyter Notebook building a regularised regression model to predict residential property sale prices in the Australian market, helping a US-based investment company — Surprise Housing — identify undervalued properties for strategic acquisition.
+
+---
 
 ## Table of Contents
-* [General Info](#general-information)
-* [Technologies Used](#technologies-used)
-* [Conclusions](#conclusions)
-* [Acknowledgements](#acknowledgements)
 
-<!-- You can include any other section that is pertinent to your problem -->
+- [Overview](#overview)
+- [Background](#background)
+- [Dataset](#dataset)
+- [Notebook Contents](#notebook-contents)
+- [Technologies Used](#technologies-used)
+- [Setup and Installation](#setup-and-installation)
+- [Usage](#usage)
+- [Results and Conclusions](#results-and-conclusions)
+- [References](#references)
+- [Contact](#contact)
 
-## General Information
-- A US-based housing company named Surprise Housing has decided to enter the Australian market. 
-The company uses data analytics to purchase houses at a price below their actual values and flip them on at a higher price. 
-For the same purpose, the company has collected a data set from the sale of houses in Australia.
-- The company is looking at prospective properties to buy to enter the market. 
--  We are required to build a regression model using regularisation in order to predict the actual value of the prospective properties
- and decide whether to invest in them or not.
+---
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+## Overview
 
-## Conclusions
-- 12 variables influence the price most.
-- YearBuilt, 1stFloorSF(Square Footage of 1st Floor),2nd Floor Sqaure KitchenQual_TA(typical) are the most important predictors for price
-- KitchenQual_TA is negatively corelated with price while others are positively corelated
-- Crawford neighborhood fetches the best price
+Surprise Housing, a US-based property investment firm, is entering the Australian real estate market. Their strategy involves purchasing properties below market value and selling them at a profit. This project builds a predictive regression model — incorporating Lasso and Ridge regularisation — to estimate the actual market value of prospective properties, providing a data-driven basis for investment decisions.
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+---
 
+## Background
+
+Predicting property prices is a regression problem with high-dimensional feature spaces, multicollinearity between predictors, and a mix of categorical and continuous variables. Standard linear regression is prone to overfitting in such settings. Regularisation techniques — Ridge (L2) and Lasso (L1) — penalise model complexity to improve generalisation. Lasso additionally performs implicit feature selection by shrinking less informative coefficients to zero, making it particularly interpretable for identifying the true drivers of property value.
+
+---
+
+## Dataset
+
+| File | Description |
+|---|---|
+| `train.csv` | Training data with 80+ property features and sale prices (Australian market) |
+| `SubjectiveQuestions.pdf` | Written analysis of model choices, regularisation interpretation, and business insights |
+
+Key features include structural attributes (floor area, year built), quality ratings (kitchen quality, overall condition), location (neighbourhood), and sale conditions.
+
+---
+
+## Notebook Contents
+
+| Section | Description |
+|---|---|
+| Data Loading & EDA | Loading data, distribution analysis, missing value treatment, outlier inspection |
+| Feature Engineering | Encoding categorical variables, handling skewed distributions, creating derived features |
+| Train/Validation Split | Splitting data for unbiased hyperparameter tuning |
+| Linear Regression Baseline | Establishing an unregularised benchmark |
+| Ridge Regression | L2 regularisation with cross-validated alpha selection |
+| Lasso Regression | L1 regularisation with feature selection and alpha tuning |
+| Model Evaluation | RMSE, R², residual analysis on validation and test sets |
+| Feature Importance | Identifying the 12 most influential predictors of sale price |
+| Business Insights | Translating model coefficients into actionable investment guidance |
+
+---
 
 ## Technologies Used
-- argcomplete==3.1.1
-- certifi==2024.2.2
-- charset-normalizer==3.3.2
-- click==8.1.7
-- colorama==0.4.6
-- idna==3.7
-- jsonpickle==3.0.2
-- packaging==23.1
-- pipx==1.2.0
-- requests==2.31.0
-- tqdm==4.66.4
-- urllib3==2.2.1
-- userpath==1.9.0
-- pandas==2.0.3
-- numpy==1.24.3
-- matplotlib==3.7.2
-- python==3.11.5 
-- sklearn==1.3.0
 
+| Library | Version | Purpose |
+|---|---|---|
+| `pandas` | 2.0.3 | Data manipulation |
+| `numpy` | 1.24.3 | Numerical operations |
+| `scikit-learn` | 1.3.0 | Regression models, regularisation, cross-validation |
+| `matplotlib` | 3.7.2 | EDA and residual plots |
+| `python` | 3.11.5 | Runtime environment |
+
+---
+
+## Setup and Installation
+
+```bash
+git clone https://github.com/chetnapriyadarshini/PropertyPricePrediction.git
+cd PropertyPricePrediction
+pip install pandas numpy scikit-learn matplotlib
+jupyter notebook "Property Pricing.ipynb"
+```
+
+---
+
+## Results and Conclusions
+
+The Lasso model identifies **12 variables** as the primary predictors of property price. Key findings:
+
+| Predictor | Direction | Interpretation |
+|---|---|---|
+| `YearBuilt` | Positive | Newer properties command higher prices |
+| `1stFlrSF` | Positive | Larger ground floor area increases value |
+| `2ndFlrSF` | Positive | Multi-storey properties are valued higher |
+| `KitchenQual_TA` (Typical) | **Negative** | Below-average kitchen quality suppresses price |
+| `Crawford` neighbourhood | Positive | Crawford is the highest-value neighbourhood in the dataset |
+
+**Investment implication:** Properties in Crawford with large floor areas and recent construction year represent the highest-value acquisition targets for Surprise Housing's Australian strategy.
+
+---
 
 ## Contact
-Created by [@chetnapriyadarshini] - feel free to contact me!
+
+Created by [@chetnapriyadarshini](https://github.com/chetnapriyadarshini) — feel free to reach out with questions or suggestions.
